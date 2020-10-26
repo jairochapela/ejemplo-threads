@@ -13,7 +13,7 @@ void cuenta_atras(std::string nombre) {
     {
         m.lock();
         std::cout << "Cuenta atras " << nombre << ": " << contador  << std::endl;
-        std::cout.flush();
+        //std::cout.flush();
         m.unlock();
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
