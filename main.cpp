@@ -11,10 +11,13 @@ void cuenta_atras(std::string nombre) {
         std::cout << "Cuenta atras " << nombre << ": " << contador  << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
-    
 }
 
 
 int main(int, char**) {
-    cuenta_atras("prueba");
+    std::thread t1(cuenta_atras, "alpha");
+    std::thread t2(cuenta_atras, "bravo");
+
+    t1.join();
+    t2.join();
 }
